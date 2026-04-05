@@ -1,0 +1,55 @@
+# Virtual environments
+.venv/
+
+# Environment files
+.env
+.env.*
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Test / coverage
+.pytest_cache/
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Python tooling caches
+.mypy_cache/
+.ruff_cache/
+
+# Logs
+*.log
+
+# DB / runtime
+*.sqlite3
+*.db
+
+# Secrets / keys
+*.pem
+*.key
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+
+# Optional swap files
+*~
+*.swp
+
+# Alembic migration configs and scripts (optional to ignore)
+alembic.ini
+alembic/
+
+
