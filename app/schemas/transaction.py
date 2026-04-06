@@ -1,5 +1,5 @@
 from pydantic import BaseModel, condecimal
-from datetime import date
+from datetime import date as date_type
 from typing import Optional
 from decimal import Decimal
 from app.models.transaction import TransactionType
@@ -9,13 +9,13 @@ class TransactionCreate(BaseModel):
     amount: condecimal(gt=0, max_digits=12, decimal_places=2)
     type: TransactionType
     category: str
-    date: date
+    date: date_type
     description: Optional[str] = None
 
 class TransactionUpdate(BaseModel):
     amount: condecimal(gt=0, max_digits=12, decimal_places=2) | None = None
     category: str | None = None
-    date: date | None = None
+    date: date_type| None = None
     description: str | None = None
 
 class TransactionResponse(BaseModel):
@@ -23,7 +23,7 @@ class TransactionResponse(BaseModel):
     amount: Decimal
     type: TransactionType
     category: str
-    date: date
+    date: date_type
     description: Optional[str] 
     created_by: int
     model_config = {"from_attributes": True}
