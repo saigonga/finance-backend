@@ -26,4 +26,3 @@ def delete_user(db:Session, user_id:int):
     user=  get_user(db, user_id)
     user_repository.delete_user(db, user)
 
-    
