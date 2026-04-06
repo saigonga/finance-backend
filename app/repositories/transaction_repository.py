@@ -47,3 +47,5 @@ def update(db:Session, data: TransactionUpdate, transaction:Transaction) -> Tran
 def soft_delete(db:Session, transaction:Transaction):
     transaction.is_deleted = True
     db.commit()
+
+
