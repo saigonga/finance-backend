@@ -9,7 +9,7 @@ from typing import List
 
 
 router = APIRouter()
-admin_only = Depends(require_roles(UserRole.ADMIN))
+admin_only = Depends(require_roles(UserRole.admin))
 
 @router.get("/", response_model=List[UserResponse], dependencies=[admin_only])
 def get_users(db:Session = Depends(get_db)):

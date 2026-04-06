@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status
 from app.repositories import user_repository
-from app.schemas.user import UserCreate, userUpdate
+from app.schemas.user import UserCreate, UserUpdate
 
 
 def get_all_users(db:Session):
@@ -18,7 +18,7 @@ def create_user(db:Session, data:UserCreate):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Email already registered")
     return user_repository.create_user(db, data)
 
-def update_user(db:Session, user_id:int, data: userUpdate):
+def update_user(db:Session, user_id:int, data: UserUpdate):
     user= get_user(db, user_id)
     return user_repository.update_user(db, user, data)
 

@@ -1,6 +1,7 @@
 from pydantic import BaseModel, condecimal
 from datetime import date
 from typing import Optional
+from decimal import Decimal
 from app.models.transaction import TransactionType
 
 
@@ -19,14 +20,12 @@ class TransactionUpdate(BaseModel):
 
 class TransactionResponse(BaseModel):
     id:int
-    amount:float
+    amount: Decimal
     type: TransactionType
     category: str
     date: date
     description: Optional[str] 
     created_by: int
-
-    class config:
-        from_attribute = True
+    model_config = {"from_attributes": True}
 
 
